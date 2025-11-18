@@ -1,3 +1,6 @@
 books
 pathfile.txt
+<<<<<<< HEAD
 __pycache__
+=======
+>>>>>>> 8c20db816fff65788b0c6efc82492d16bc0f0af7
