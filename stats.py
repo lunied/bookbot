@@ -3,7 +3,7 @@ def get_num_words(text):
     num_words = 0
     for word in text:
         num_words += 1
-    print(f"Found {num_words} total words")
+    return num_words
 
 def get_num_characters(text):
     character_dictionary = {}
@@ -27,3 +27,12 @@ def sorted_list(ch_dict):
 
 def sort_on(characters):
     return characters["num"]
+
+def print_report(bookpath, booktext):
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {bookpath}...")
+    print("----------- Word Count ----------")
+    print(f"Found {get_num_words(booktext)} total words")
+    print("--------- Character Count -------")
+    for dict in sorted_list(get_num_characters(booktext)):
+        print(f"{dict["name"]}: {dict["num"]}")
