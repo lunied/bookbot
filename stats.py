@@ -12,4 +12,18 @@ def get_num_characters(text):
         if ch not in character_dictionary:
             character_dictionary[ch] = 0
         character_dictionary[ch] += 1
-    print(character_dictionary)
+    return character_dictionary
+
+def sorted_list(ch_dict):
+    ch_dict_list = []
+    for key in ch_dict:
+        if key.isalpha():
+            dict = {}
+            dict["name"] = key
+            dict["num"] = ch_dict[key]
+            ch_dict_list.append(dict)
+    ch_dict_list.sort(reverse=True, key=sort_on)
+    return ch_dict_list
+
+def sort_on(characters):
+    return characters["num"]
